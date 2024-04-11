@@ -1,5 +1,5 @@
 import java.text.DecimalFormat;
-class Person implements Comparable<Person> {
+class Person  {
 
     private String nombres;
     private String apellidos;
@@ -33,11 +33,7 @@ class Person implements Comparable<Person> {
         return nombres+" "+apellidos+" : "+edad+", "+df.format(peso);
     }
 
-    @Override
-    public int compareTo(Person o) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+
 
     private static final DecimalFormat df = new DecimalFormat();
     {

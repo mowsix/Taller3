@@ -77,18 +77,15 @@ public class GeneradorADTs {
     }
 
     public static void main(String[] args) {
-        //arrayFromInput();
-        List<Person> personas = generar(10);
-        for (Person p : personas)
-            StdOut.println(p);
 
-        // TODO: Fix handling of UTF-8 characters in Windows
-        String test ="привет";
-        System.out.println(test);
-        String test2 = new String( test.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_16);
-        System.out.println(test2);
-        String test3 = new String( StandardCharsets.UTF_8.encode(test).array(), StandardCharsets.UTF_16);
-        System.out.println(test3);
+        List<Person> personas = generar(10);
+        ListaDobleEnlazada listaPersonasDobleEnlazada = new ListaDobleEnlazada();
+        StdOut.println("LISTA EN DESORDEN");
+        listaPersonasDobleEnlazada.crearDesdeLista(personas);
+
+        StdOut.println("LISTA ORDENADA");
+        ListaDobleEnlazada listaOrdenada = listaPersonasDobleEnlazada.mergesort();
+        listaOrdenada.imprimir();
 
     }
 
