@@ -84,19 +84,20 @@ public class GeneradorADTs {
         * SEBASTIAN VILLA VARGAS
         */
 
-        List<Person> personas = generar(50);
+        List<Person> personas = generar(10);
         ListaDobleEnlazada listaPersonasDobleEnlazada = new ListaDobleEnlazada();
         StdOut.println("LISTA EN DESORDEN");
         listaPersonasDobleEnlazada.crearDesdeLista(personas);
 
 
-        long inicioNano = System.nanoTime();
+
 
         StdOut.println("LISTA ORDENADA");
+        long inicioNano = System.nanoTime();
         ListaDobleEnlazada listaOrdenada = listaPersonasDobleEnlazada.mergesort();
+        long finNano = System.nanoTime();
         listaOrdenada.imprimir();
 
-        long finNano = System.nanoTime();
         long tiempoEjecucionNano = finNano - inicioNano;
         double tiempoEjecucionSegundos = tiempoEjecucionNano / 1_000_000_000.0;
         System.out.println("Tiempo de ejecución en segundos (nanoTime): " + tiempoEjecucionSegundos);
